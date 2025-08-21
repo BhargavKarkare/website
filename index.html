@@ -10,15 +10,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Parallax gradient nebula -->
+  <!-- Blurred photo background -->
+  <div class="bg-photo"></div>
+  <div class="bg-glass"></div>
+
+  <!-- Parallax color haze (subtle) -->
   <div class="bg-blur bg-a layer" data-depth="0.05"></div>
   <div class="bg-blur bg-b layer" data-depth="0.1"></div>
-  <div class="bg-blur bg-c layer" data-depth="0.06"></div>
 
   <header class="container nav appear-top">
     <div class="brand">Your Name</div>
     <nav>
-      <a href="#projects" data-open-projects>Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#certifications">Certifications</a>
@@ -30,41 +33,39 @@
     <!-- Hero -->
     <section id="hero" class="container hero appear-up">
       <p class="eyebrow big">DEVOPS ENGINEER</p>
-      <!-- Removed the previous big subheading per request -->
       <p class="sub">
         Building scalable pipelines, Kubernetes platforms, and robust observability across AWS/Azure/GCP.
       </p>
       <div class="cta">
-        <a class="btn-primary" href="#projects" data-scroll-projects>View Projects</a>
-        <!-- Replace FILE_ID below -->
+        <a class="btn-primary" href="#projects">View Projects</a>
+        <!-- Replace FILE_ID -->
         <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">
           Download Resume
         </a>
       </div>
 
       <!-- About Me -->
-      <section id="about" class="about card soft appear-up delay-1">
+      <section id="about" class="about card soft depth appear-up delay-1 corner">
         <h2>About Me</h2>
         <p>
           DevOps engineer focused on automation, reliability, and cloud cost efficiency. Passionate about
-          Kubernetes platforms, GitOps, and clean Infrastructure as Code. Cycling, coffee, and observability charts
-          keep me happy. (Update this text later.)
+          Kubernetes platforms, GitOps, and clean IaC. (Update this later.)
         </p>
       </section>
 
       <div class="stats">
-        <div class="stat-card depth-2">
+        <div class="stat-card depth-2 corner">
           <span>4+ yrs</span>
           <label>Experience</label>
         </div>
       </div>
     </section>
 
-    <!-- Projects (grid stays for SEO and deep links; clicking opens modal) -->
+    <!-- Projects -->
     <section id="projects" class="container section appear-up delay-2">
       <h2>Projects</h2>
       <div class="grid">
-        <article class="card project depth float" data-project="eks-multiregion">
+        <article class="card project depth float corner" data-modal="proj-eks-multiregion">
           <div class="eyebrow small">Project</div>
           <h3>Kubernetes Platform for Multi-Region SaaS</h3>
           <p>Built an EKS-based multi-region platform with GitOps for rapid, consistent deployments.</p>
@@ -76,10 +77,10 @@
           <div class="tags">AWS · EKS · Terraform · Argo CD · Helm · Prometheus</div>
         </article>
 
-        <article class="card project depth float" data-project="gha-monorepo">
+        <article class="card project depth float corner" data-modal="proj-gha-monorepo">
           <div class="eyebrow small">Project</div>
           <h3>CI/CD Modernization for Monorepo</h3>
-          <p>Migrated to GitHub Actions with reusable workflows, caching, parallelism.</p>
+          <p>Migrated to GitHub Actions with reusable workflows, caching, and parallelism.</p>
           <ul class="metrics">
             <li>Lead time: -60%</li>
             <li>Pipeline time: 35min → 9min</li>
@@ -88,7 +89,7 @@
           <div class="tags">GitHub Actions · Docker · Caching · Test Sharding</div>
         </article>
 
-        <!-- Add more projects by duplicating an article and giving a new data-project id -->
+        <!-- Duplicate for more projects: update data-modal and add a matching template below -->
       </div>
     </section>
 
@@ -96,12 +97,12 @@
     <section id="skills" class="container section appear-up delay-3">
       <h2>Skills & Tools</h2>
       <div class="skills">
-        <div class="card soft depth"><h4>Cloud</h4><p>AWS, Azure, GCP</p></div>
-        <div class="card soft depth"><h4>CI/CD</h4><p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p></div>
-        <div class="card soft depth"><h4>IaC</h4><p>Terraform, Pulumi, CloudFormation</p></div>
-        <div class="card soft depth"><h4>Containers</h4><p>Docker, Kubernetes, Helm</p></div>
-        <div class="card soft depth"><h4>Observability</h4><p>Prometheus, Grafana, ELK/EFK, OpenTelemetry</p></div>
-        <div class="card soft depth"><h4>Security</h4><p>Vault, Snyk, Trivy</p></div>
+        <div class="card soft depth corner"><h4>Cloud</h4><p>AWS, Azure, GCP</p></div>
+        <div class="card soft depth corner"><h4>CI/CD</h4><p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p></div>
+        <div class="card soft depth corner"><h4>IaC</h4><p>Terraform, Pulumi, CloudFormation</p></div>
+        <div class="card soft depth corner"><h4>Containers</h4><p>Docker, Kubernetes, Helm</p></div>
+        <div class="card soft depth corner"><h4>Observability</h4><p>Prometheus, Grafana, ELK/EFK, OpenTelemetry</p></div>
+        <div class="card soft depth corner"><h4>Security</h4><p>Vault, Snyk, Trivy</p></div>
       </div>
     </section>
 
@@ -109,17 +110,17 @@
     <section id="experience" class="container section appear-up delay-4">
       <h2>Experience</h2>
       <div class="timeline">
-        <div class="item card soft depth">
+        <div class="item card soft depth corner" data-modal="exp-senior">
           <h3>Senior DevOps Engineer · Company</h3>
           <span class="period">2023 — Present</span>
           <p>- Led Kubernetes platform; introduced GitOps; reduced MTTR by 70%.</p>
         </div>
-        <div class="item card soft depth">
+        <div class="item card soft depth corner" data-modal="exp-mid">
           <h3>DevOps Engineer · Company</h3>
           <span class="period">2021 — 2023</span>
           <p>- Migrated CI/CD to GitHub Actions; pipelines 3.8× faster with caching and sharding.</p>
         </div>
-        <div class="item card soft depth">
+        <div class="item card soft depth corner" data-modal="exp-assoc">
           <h3>Associate DevOps Engineer · Company</h3>
           <span class="period">2019 — 2021</span>
           <p>- Containerized legacy apps; introduced monitoring and on-call runbooks.</p>
@@ -131,12 +132,12 @@
     <section id="certifications" class="container section appear-up delay-5">
       <h2>Certifications</h2>
       <div class="grid">
-        <article class="card cert float depth">
+        <article class="card cert float depth corner">
           <h3>AWS Certified Solutions Architect – Associate</h3>
           <p>Amazon Web Services · 2024</p>
           <a class="link" target="_blank" rel="noopener" href="#">Verify</a>
         </article>
-        <article class="card cert float depth">
+        <article class="card cert float depth corner">
           <h3>Certified Kubernetes Administrator (CKA)</h3>
           <p>Linux Foundation · 2023</p>
           <a class="link" target="_blank" rel="noopener" href="#">Verify</a>
@@ -160,44 +161,83 @@
     <span>© <span id="year"></span> Your Name</span>
   </footer>
 
-  <!-- Projects modal -->
-  <div id="projects-modal" class="modal" aria-hidden="true">
+  <!-- Shared Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="modal-card depth-3" role="dialog" aria-modal="true">
       <button class="close" title="Close" data-close>✕</button>
-      <div class="modal-content">
-        <!-- Filled by script from the templates below -->
-      </div>
+      <div class="modal-content"></div>
     </div>
   </div>
 
   <!-- Project detail templates -->
-  <template id="tmpl-eks-multiregion">
-    <h2>Project: Kubernetes Platform for Multi-Region SaaS</h2>
-    <p>
-      Designed and implemented a multi-region EKS platform with GitOps (Argo CD), multi-tenant namespaces,
-      and blue/green rollouts using Helm and progressive delivery. Automated cluster bootstrapping with Terraform.
+  <template id="tmpl-proj-eks-multiregion">
+    <h2>Kubernetes Platform for Multi-Region SaaS</h2>
+    <p class="lede">
+      Multi-region EKS platform with GitOps for consistent, auditable deployments and platform guardrails.
     </p>
+    <h3>Description</h3>
+    <p>
+      Architected EKS clusters across two regions with cluster-autoscaler, IRSA, and managed node groups.
+      GitOps via Argo CD with app-of-apps pattern. Standardized Helm charts, progressive delivery, and
+      SLO-based alerting with Prometheus/Grafana.
+    </p>
+    <h3>Outcomes</h3>
     <ul>
       <li>Deployment frequency increased to 20/day</li>
       <li>MTTR reduced from 90min to 15min</li>
-      <li>Cost reduced by 22% via rightsizing and lifecycle policies</li>
+      <li>Cloud cost reduced by 22% through rightsizing and lifecycle policies</li>
     </ul>
-    <p class="tags">Stack: AWS, EKS, Terraform, Argo CD, Helm, Prometheus/Grafana</p>
+    <p class="tags">Stack: AWS, EKS, Terraform, Argo CD, Helm, Prometheus/Grafana, Loki</p>
   </template>
 
-  <template id="tmpl-gha-monorepo">
-    <h2>Project: CI/CD Modernization for Monorepo</h2>
+  <template id="tmpl-proj-gha-monorepo">
+    <h2>CI/CD Modernization for Monorepo</h2>
+    <p class="lede">Modern GitHub Actions pipeline with composite actions, matrices, and aggressive caching.</p>
+    <h3>Description</h3>
     <p>
-      Migrated legacy pipelines to GitHub Actions with composite actions, matrix builds, and caching.
-      Introduced trunk-based development and automated environment previews.
+      Introduced reusable workflows, build/test matrices, and Docker layer caching. Adopted trunk-based
+      development and preview environments. Enforced quality gates with status checks and coverage thresholds.
     </p>
+    <h3>Outcomes</h3>
     <ul>
       <li>Lead time decreased by 60%</li>
-      <li>Pipeline time from 35min to 9min</li>
+      <li>Pipeline time reduced from 35min to 9min</li>
       <li>Change failure rate down by 40%</li>
     </ul>
     <p class="tags">Stack: GitHub Actions, Docker, Node, Test sharding, Artifact caching</p>
+  </template>
+
+  <!-- Experience detail templates -->
+  <template id="tmpl-exp-senior">
+    <h2>Senior DevOps Engineer · Company</h2>
+    <p class="lede">Ownership of platform reliability, scalability, and cost optimization.</p>
+    <h3>Highlights</h3>
+    <ul>
+      <li>Drove GitOps adoption across teams; 100% infra/app via PRs</li>
+      <li>Implemented SLOs, paging policies, and incident postmortems</li>
+      <li>Cut MTTR by 70% with better runbooks and golden signals</li>
+    </ul>
+  </template>
+
+  <template id="tmpl-exp-mid">
+    <h2>DevOps Engineer · Company</h2>
+    <p class="lede">Modernized CI/CD and cloud foundations.</p>
+    <ul>
+      <li>Migrated pipelines to GitHub Actions; 3.8× faster</li>
+      <li>Built Terraform modules for multi-account AWS</li>
+      <li>Rolled out image scanning and IaC policy checks</li>
+    </ul>
+  </template>
+
+  <template id="tmpl-exp-assoc">
+    <h2>Associate DevOps Engineer · Company</h2>
+    <p class="lede">Enablement and groundwork for platform practices.</p>
+    <ul>
+      <li>Containerized legacy apps, wrote initial Helm charts</li>
+      <li>Set up basic monitoring, logs, and alerting</li>
+      <li>On-call playbooks and escalation paths</li>
+    </ul>
   </template>
 
   <script src="script.js"></script>
