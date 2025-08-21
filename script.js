@@ -17,12 +17,12 @@ const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 if (toggle) {
   toggle.addEventListener('click', () => {
-    const visible = links.style.display === 'flex';
-    links.style.display = visible ? 'none' : 'flex';
+    const show = links.style.display === 'flex';
+    links.style.display = show ? 'none' : 'flex';
   });
 }
 
-// 3D tilt on hover (subtle)
+// Subtle 3D tilt
 const clamp=(n,min,max)=>Math.max(min,Math.min(n,max));
 document.querySelectorAll('.card, .btn-primary, .btn-ghost').forEach(card=>{
   card.addEventListener('mousemove', e=>{

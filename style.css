@@ -36,40 +36,44 @@ a{text-decoration:none;color:var(--text)}
 h2{font-size:26px;margin:0 0 12px}
 h3{font-size:18px;margin:8px 0}
 .sub{color:#d1d5db;max-width:760px}
-.badge-row{display:flex;gap:12px;margin:10px 0 10px}
-.badge-row img{height:40px;width:auto;border-radius:6px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+
+/* Bigger badges */
+.badge-row{display:flex;gap:14px;margin:10px 0 10px}
+.badge-row img{height:56px;width:auto;border-radius:8px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.45));transition:transform .15s ease, filter .15s ease}
+.badge-row img:hover{transform:scale(1.06);filter:drop-shadow(0 6px 16px rgba(34,211,238,.35))}
 
 .cta{display:flex;gap:12px;margin:14px 0 6px}
 .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#001216;padding:10px 16px;border-radius:12px;font-weight:600;box-shadow:0 10px 26px rgba(34,211,238,.25);transition:transform .18s ease, box-shadow .18s ease}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(34,211,238,.35)}
-.btn-ghost{border:1px solid var(--border);padding:10px 16px;border-radius:12px;color:var(--text);transition:background .2s, transform .2s}
+.btn-ghost{border:1px solid var(--border);padding:10px 16px;border-radius:12px;color:var(--text);transition:background .2s}
 .btn-ghost:hover{background:rgba(255,255,255,0.08)}
 
 .about{margin-top:14px}
 .about p{color:#e2e8f0}
 
-/* Sections (tighter) */
-.section{padding:26px 0 28px;position:relative;z-index:4}
+/* Sections (tight) */
+.section{padding:24px 0 26px;position:relative;z-index:4}
 
 /* Section header + years badge */
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .years-badge{background:rgba(125,211,252,0.12);border:1px solid #3a4a60;color:#9be6ff;padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
 
 /* Cards and grids */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:10px}
 .card{background:var(--card);border:1px solid #223047;border-radius:16px;padding:16px;transition:transform .25s ease, border-color .2s ease, box-shadow .25s ease, background .25s ease, filter .25s ease;position:relative;overflow:hidden;backdrop-filter:blur(2px)}
 .card.soft{background:#111827b8;border-color:#1f2a3b}
 .depth{box-shadow:0 10px 30px rgba(0,0,0,.28)}
 
-/* Corner glow */
-.corner::before,.corner::after{content:"";position:absolute;width:40px;height:40px;border-radius:12px;opacity:0;transition:opacity .25s, transform .25s}
-.corner::before{top:-12px;left:-12px;background:radial-gradient(20px 20px at 20px 20px, #7dd3fc7a, transparent 70%)}
-.corner::after{bottom:-12px;right:-12px;background:radial-gradient(20px 20px at 20px 20px, #22d3ee7a, transparent 70%)}
-.c2,.c3{position:absolute;width:40px;height:40px;border-radius:12px;opacity:0;transition:opacity .25s, transform .25s}
-.c2{top:-12px;right:-12px;background:radial-gradient(20px 20px at 20px 20px, #60a5fa7a, transparent 70%)}
-.c3{bottom:-12px;left:-12px;background:radial-gradient(20px 20px at 20px 20px, #34d3997a, transparent 70%)}
-.card.corner:hover::before,.card.corner:hover::after,.card.corner:hover .c2,.card.corner:hover .c3{opacity:1;transform:translate(8px,-8px)}
+/* FULL-EDGE HIGHLIGHT (all sides) */
+.hl::after{
+  content:""; position:absolute; inset:-1px; border-radius:16px;
+  background: linear-gradient(120deg, rgba(34,211,238,.0), rgba(34,211,238,.35), rgba(125,211,252,.0));
+  filter:blur(10px); opacity:0; transition:opacity .25s ease;
+  pointer-events:none;
+}
+.hl:hover::after, .hl:focus-within::after{ opacity:1 }
 
+/* Hover motion emphasis */
 .card.project:hover,.timeline .item:hover{transform:translateY(-6px) scale(1.03);border-color:#3a4a60;background:linear-gradient(180deg, rgba(125,211,252,0.14), rgba(17,24,39,0.65));filter:saturate(120%)}
 .grid:hover .card.project{opacity:.92}
 .grid .card.project:hover{opacity:1;z-index:5}
@@ -78,11 +82,15 @@ h3{font-size:18px;margin:8px 0}
 .metrics li{margin:4px 0}
 .tags{margin-top:10px;color:#9be6ff;font-size:13px}
 
-/* Skills & timeline grids (reduced gaps) */
+/* Skills & timeline */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
 .timeline{display:grid;gap:10px}
 .period{display:block;color:#cbd5e1;font-size:13px;margin:4px 0 8px}
-.cert .link.btn-verify{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:10px;border:1px solid #2b3a50;color:#9be6ff;background:rgba(125,211,252,.08)}
+
+/* Certifications single tile */
+.cert-list{margin:8px 0 0; padding-left:18px}
+.cert-list li{margin:6px 0}
+.verify{margin-left:8px;color:#9be6ff;border:1px solid #2b3a50;border-radius:8px;padding:4px 8px;background:rgba(125,211,252,.08)}
 
 /* Contact */
 .contact-card{padding:18px}
@@ -90,9 +98,7 @@ h3{font-size:18px;margin:8px 0}
 .contact-item{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.03);border:1px solid #223047;border-radius:12px;padding:10px;transition:transform .2s, border-color .2s}
 .contact-item:hover{transform:translateY(-2px);border-color:#3a4a60}
 .contact-item .icon{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(125,211,252,0.15);color:#9be6ff;font-weight:700}
-.contact-row a,.contact-item a{color:#9be6ff}
 
-/* Footer */
 .footer{padding:22px 0;color:#cbd5e1;border-top:1px solid rgba(255,255,255,0.08);margin-top:16px}
 
 /* Modal */
