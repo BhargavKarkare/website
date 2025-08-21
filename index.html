@@ -7,10 +7,14 @@
   <meta name="description" content="DevOps engineer specializing in CI/CD, Kubernetes, Terraform, and cloud automation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="container nav">
+  <!-- Blurred background gradients -->
+  <div class="bg-blur bg-a"></div>
+  <div class="bg-blur bg-b"></div>
+
+  <header class="container nav appear-top">
     <div class="brand">Your Name</div>
     <nav>
       <a href="#projects">Projects</a>
@@ -23,8 +27,8 @@
 
   <main>
     <!-- Hero -->
-    <section id="hero" class="container hero">
-      <p class="eyebrow">DevOps Engineer</p>
+    <section id="hero" class="container hero appear-up">
+      <p class="eyebrow big">DEVOPS ENGINEER</p>
       <h1>Automating Cloud Infra, CI/CD, and Reliability</h1>
       <p class="sub">
         Building scalable pipelines, Kubernetes platforms, and robust observability across AWS/Azure/GCP.
@@ -37,18 +41,19 @@
         </a>
       </div>
       <div class="stats">
-        <div><span>5+ yrs</span><label>Experience</label></div>
-        <div><span>20/day</span><label>Deploy freq</label></div>
-        <div><span>-25%</span><label>Cloud cost</label></div>
+        <div class="stat-card">
+          <span>4+ yrs</span>
+          <label>Experience</label>
+        </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="container section">
+    <section id="projects" class="container section appear-up delay-1">
       <h2>Projects</h2>
       <div class="grid">
         <!-- Project card -->
-        <article class="card">
+        <article class="card float">
           <div class="eyebrow small">Case Study</div>
           <h3>Kubernetes Platform for Multi-Region SaaS</h3>
           <p>Designed an EKS-based multi-region platform with GitOps for rapid, consistent deployments.</p>
@@ -60,7 +65,7 @@
           <div class="tags">AWS · EKS · Terraform · Argo CD · Helm · Prometheus</div>
         </article>
 
-        <article class="card">
+        <article class="card float">
           <div class="eyebrow small">Case Study</div>
           <h3>CI/CD Modernization for Monorepo</h3>
           <p>Shifted to GitHub Actions with reusable workflows, caching, and parallelism.</p>
@@ -71,36 +76,34 @@
           </ul>
           <div class="tags">GitHub Actions · Docker · Caching · Test Sharding</div>
         </article>
-
-        <!-- Add more cards as needed -->
       </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="container section">
+    <section id="skills" class="container section appear-up delay-2">
       <h2>Skills & Tools</h2>
       <div class="skills">
-        <div>
+        <div class="card soft">
           <h4>Cloud</h4>
           <p>AWS, Azure, GCP</p>
         </div>
-        <div>
+        <div class="card soft">
           <h4>CI/CD</h4>
           <p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p>
         </div>
-        <div>
+        <div class="card soft">
           <h4>IaC</h4>
           <p>Terraform, Pulumi, CloudFormation</p>
         </div>
-        <div>
+        <div class="card soft">
           <h4>Containers</h4>
           <p>Docker, Kubernetes, Helm</p>
         </div>
-        <div>
+        <div class="card soft">
           <h4>Observability</h4>
           <p>Prometheus, Grafana, ELK/EFK, OpenTelemetry</p>
         </div>
-        <div>
+        <div class="card soft">
           <h4>Security</h4>
           <p>Vault, Snyk, Trivy</p>
         </div>
@@ -108,33 +111,39 @@
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="container section">
+    <section id="experience" class="container section appear-up delay-3">
       <h2>Experience</h2>
       <div class="timeline">
-        <div class="item">
+        <div class="item card soft">
           <h3>Senior DevOps Engineer · Company</h3>
           <span class="period">2023 — Present</span>
-          <p>- Led K8s platform; introduced GitOps; reduced MTTR by 70%.</p>
+          <p>- Led Kubernetes platform; introduced GitOps; reduced MTTR by 70%.</p>
+          <p>- Scaled observability with Prometheus + Loki + Grafana; SLOs and alerting.</p>
         </div>
-        <div class="item">
+        <div class="item card soft">
           <h3>DevOps Engineer · Company</h3>
-          <span class="period">2020 — 2023</span>
-          <p>- Migrated CI/CD to GitHub Actions; sped pipelines 3.8×.</p>
+          <span class="period">2021 — 2023</span>
+          <p>- Migrated CI/CD to GitHub Actions; pipelines 3.8× faster with caching and sharding.</p>
+          <p>- Terraform modules for multi-account AWS; automated cost guardrails.</p>
+        </div>
+        <div class="item card soft">
+          <h3>Associate DevOps Engineer · Company</h3>
+          <span class="period">2019 — 2021</span>
+          <p>- Containerized legacy apps; introduced basic monitoring and on-call runbooks.</p>
         </div>
       </div>
     </section>
 
     <!-- Certifications -->
-    <section id="certifications" class="container section">
+    <section id="certifications" class="container section appear-up delay-4">
       <h2>Certifications</h2>
       <div class="grid">
-        <!-- Example certificate card; replace with yours -->
-        <article class="card cert">
+        <article class="card cert float">
           <h3>AWS Certified Solutions Architect – Associate</h3>
           <p>Amazon Web Services · 2024</p>
           <a class="link" target="_blank" rel="noopener" href="#">Verify</a>
         </article>
-        <article class="card cert">
+        <article class="card cert float">
           <h3>Certified Kubernetes Administrator (CKA)</h3>
           <p>Linux Foundation · 2023</p>
           <a class="link" target="_blank" rel="noopener" href="#">Verify</a>
@@ -143,9 +152,9 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="container section">
+    <section id="contact" class="container section appear-up delay-5">
       <h2>Contact</h2>
-      <p>Open to interesting DevOps/SRE opportunities and consulting.</p>
+      <p>Open to DevOps/SRE opportunities and consulting.</p>
       <div class="social">
         <!-- Replace with your handles -->
         <a target="_blank" rel="noopener" href="https://github.com/yourhandle">GitHub</a>
