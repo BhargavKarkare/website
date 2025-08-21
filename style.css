@@ -27,20 +27,29 @@ a{text-decoration:none;color:var(--text)}
 
 .hero{padding:44px 0 8px;position:relative;z-index:4}
 
-/* Larger, bolder heading */
+/* Bigger, bolder heading */
 .eyebrow{color:#7DD3FC;letter-spacing:.2em;text-transform:uppercase}
 .eyebrow.big.xxlarge{font-size:36px;letter-spacing:.34em}
 .strong{font-weight:800;color:#8BE9FF}
 
 /* Title + badges row */
-.hero-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.badge-row.right{margin-left:auto;display:flex;gap:14px}
-.badge-row.right img{
-  height:100px;width:auto;border-radius:10px;
-  filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));
-  transition:transform .15s ease, filter .15s ease
+/* Title + inline badges row beside it */
+.hero-title-row{
+  display:flex; align-items:center; gap:18px;
+  flex-wrap:nowrap; /* keep on one line when possible */
 }
-.badge-row.right img:hover{transform:scale(1.06);filter:drop-shadow(0 10px 20px rgba(34,211,238,.35))}
+.badge-inline{
+  display:flex; gap:16px; margin-left:10px; /* slight separation from title */
+}
+.badge-inline img{
+  height:100px; width:auto; border-radius:10px;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));
+  transition:transform .15s ease, filter .15s ease;
+}
+.badge-inline img:hover{
+  transform:translateY(-2px) scale(1.06);
+  filter:drop-shadow(0 10px 20px rgba(34,211,238,.35));
+}
 
 h2{font-size:26px;margin:0 0 12px}
 h3{font-size:18px;margin:8px 0}
