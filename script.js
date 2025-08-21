@@ -22,7 +22,7 @@ if (toggle) {
   });
 }
 
-// Subtle 3D tilt on cards/buttons
+// Subtle 3D tilt on interactive cards/buttons
 const clamp = (n,min,max)=>Math.max(min,Math.min(n,max));
 document.querySelectorAll('.card, .btn-primary, .btn-ghost').forEach(card=>{
   card.addEventListener('mousemove', e=>{
@@ -36,7 +36,7 @@ document.querySelectorAll('.card, .btn-primary, .btn-ghost').forEach(card=>{
   card.addEventListener('mouseleave', ()=> card.style.transform = '');
 });
 
-// Scroll reveal (staggered)
+// Reveal animations on scroll
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.appear-up, .appear-top').forEach(el=>observer.observe(el));
 
-// Centered modal handling (projects/experience)
+// Centered modal (projects/experience)
 const modal = document.getElementById('modal');
 const modalContent = modal?.querySelector('.modal-content');
 
@@ -69,15 +69,46 @@ modal?.addEventListener('click', (e)=>{
 modal?.querySelector('.close')?.addEventListener('click', closeModal);
 window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
-// Optional: parallax for decorative layers if you add them in HTML (.layer.a/.layer.b)
-const layers = document.querySelectorAll('.layer');
-if (layers.length){
-  window.addEventListener('mousemove', (e)=>{
-    const x = (e.clientX / window.innerWidth - 0.5);
-    const y = (e.clientY / window.innerHeight - 0.5);
-    layers.forEach((l,i)=>{
-      const depth = 0.04 + i*0.02;
-      l.style.transform = `translate3d(${x * -40 * depth}px, ${y * -40 * depth}px, 0)`;
-    });
+// Skills accordion with smooth height animation
+(function(){
+  const acc = document.getElementById('skills-accordion');
+  if(!acc) return;
+  const btn = acc.querySelector('.skill-toggle');
+  const wrap = acc.querySelector('.skill-content-wrapper');
+
+  const setHeight = (open) => {
+    if (open){
+      wrap.style.height = 'auto';
+      const h = wrap.clientHeight + 'px';
+      wrap.style.height = '0px';
+      // force reflow
+      // eslint-disable-next-line no-unused-expressions
+      wrap.offsetHeight;
+      wrap.style.height = h;
+    } else {
+      wrap.style.height = wrap.clientHeight + 'px';
+      // force reflow
+      // eslint-disable-next-line no-unused-expressions
+      wrap.offsetHeight;
+      wrap.style.height = '0px';
+    }
+  };
+
+  btn.addEventListener('click', ()=>{
+    const open = acc.getAttribute('aria-expanded') !== 'true';
+    acc.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    setHeight(open);
   });
-}
+
+  // Optional: open by default
+  // acc.setAttribute('aria-expanded','true');
+  // btn.setAttribute('aria-expanded','true');
+  // setHeight(true);
+
+  wrap.addEventListener('transitionend', ()=>{
+    if (acc.getAttribute('aria-expanded') === 'true'){
+      wrap.style.height = 'auto';
+    }
+  });
+})();
