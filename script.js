@@ -14,7 +14,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // 3D tilt on hover
 const clamp=(n,min,max)=>Math.max(min,Math.min(n,max));
-document.querySelectorAll('.card, .stat-card, .btn-primary, .btn-ghost').forEach(card=>{
+document.querySelectorAll('.card, .btn-primary, .btn-ghost').forEach(card=>{
   card.addEventListener('mousemove', e=>{
     const r = card.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width;
@@ -26,18 +26,7 @@ document.querySelectorAll('.card, .stat-card, .btn-primary, .btn-ghost').forEach
   card.addEventListener('mouseleave', ()=> card.style.transform = '');
 });
 
-// Parallax haze layers
-const layers = document.querySelectorAll('.layer');
-window.addEventListener('mousemove', (e)=>{
-  const x = (e.clientX / window.innerWidth - 0.5);
-  const y = (e.clientY / window.innerHeight - 0.5);
-  layers.forEach(l=>{
-    const d = parseFloat(l.dataset.depth || 0.05);
-    l.style.transform = `translate3d(${x * -40 * d}px, ${y * -40 * d}px, 0)`;
-  });
-});
-
-// Reveal on scroll
+// Intersection reveal
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -46,31 +35,51 @@ const observer = new IntersectionObserver((entries)=>{
     }
   });
 },{threshold:0.12});
-document.querySelectorAll('.appear-up, .appear-top, .float').forEach(el=>observer.observe(el));
+document.querySelectorAll('.appear-up, .appear-top').forEach(el=>observer.observe(el));
 
-// Modal handling (projects + experience)
+// Modal handling: body scroll stays enabled; card opens near its position
 const modal = document.getElementById('modal');
+const modalCard = modal.querySelector('.modal-card');
 const modalContent = modal.querySelector('.modal-content');
 
-function openModal(templateId){
-  const tmpl = document.getElementById(`tmpl-${templateId}`);
+function openTemplate(id){
+  const tmpl = document.getElementById(`tmpl-${id}`);
   if(!tmpl) return;
   modalContent.innerHTML = '';
   modalContent.appendChild(tmpl.content.cloneNode(true));
   modal.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
+}
+
+function positionModalNear(el){
+  const rect = el.getBoundingClientRect();
+  const top = window.scrollY + rect.top + rect.height + 12; // below the tile
+  const left = Math.min(
+    window.scrollX + rect.left + rect.width/2 - modalCard.offsetWidth/2,
+    document.body.scrollWidth - modalCard.offsetWidth - 16
+  );
+  modalCard.style.top = `${Math.max(16, top)}px`;
+  modalCard.style.left = `${Math.max(16, left)}px`;
+}
+
+function openModalFrom(el){
+  openTemplate(el.getAttribute('data-modal'));
+  // ensure modalCard has dimensions before positioning
+  requestAnimationFrame(()=>positionModalNear(el));
 }
 
 function closeModal(){
   modal.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
 }
 
-// Open from project tiles
+// Attach click handlers to all tiles (projects + experience)
 document.querySelectorAll('[data-modal]').forEach(el=>{
-  el.addEventListener('click', ()=>{
-    openModal(el.getAttribute('data-modal'));
-  });
+  // add extra corner glow elements for full 4-corner effect
+  if(!el.querySelector('.c2')) {
+    const c2 = document.createElement('span'); c2.className='c2';
+    const c3 = document.createElement('span'); c3.className='c3';
+    el.appendChild(c2); el.appendChild(c3);
+  }
+  el.addEventListener('click', ()=> openModalFrom(el));
 });
 
 // Close controls
