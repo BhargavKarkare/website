@@ -14,15 +14,17 @@
   <div class="bg-photo"></div>
   <div class="bg-glass"></div>
 
-  <header class="container nav appear-top">
-    <div class="brand">Bhargav Karkare</div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="nav appear-top">
+    <div class="container nav-inner">
+      <div class="brand">Bhargav Karkare</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -30,24 +32,24 @@
     <section id="hero" class="container hero appear-up">
       <p class="eyebrow big xlarge">DEVOPS ENGINEER</p>
 
-      <!-- Certification badges row (replace src with your badge image URLs) -->
+      <!-- Certification badges row (now from images/) -->
       <div class="badge-row">
-        <!-- examples; replace or add more -->
-        <img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/64/certificate.png" alt="Cert badge">
-        <!-- <img src="YOUR_BADGE_URL.svg" alt="AWS SAA"> -->
-        <!-- <img src="YOUR_BADGE_URL.svg" alt="CKA"> -->
+        <img src="images/aws.jpg" alt="AWS badge">
+        <img src="images/azure.jpg" alt="Azure badge">
+        <img src="images/k.jpg" alt="Kubernetes badge">
       </div>
 
       <p class="sub">
         Building scalable pipelines, Kubernetes platforms, and robust observability across AWS/Azure/GCP.
       </p>
+
       <div class="cta">
         <a class="btn-primary" href="#projects">View Projects</a>
         <!-- Replace FILE_ID -->
         <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">Download Resume</a>
       </div>
 
-      <!-- About Me (no tiles) -->
+      <!-- About Me (tight spacing requested) -->
       <section id="about" class="about appear-up delay-1">
         <h2>About Me</h2>
         <p>
@@ -62,6 +64,7 @@
       <h2>Projects</h2>
       <div class="grid" id="projects-grid">
         <article class="card project depth float corner" data-modal="proj-eks-multiregion">
+          <span class="c2"></span><span class="c3"></span>
           <div class="eyebrow small">Project</div>
           <h3>Kubernetes Platform for Multi-Region SaaS</h3>
           <p>Built an EKS-based multi-region platform with GitOps for rapid, consistent deployments.</p>
@@ -74,6 +77,7 @@
         </article>
 
         <article class="card project depth float corner" data-modal="proj-gha-monorepo">
+          <span class="c2"></span><span class="c3"></span>
           <div class="eyebrow small">Project</div>
           <h3>CI/CD Modernization for Monorepo</h3>
           <p>Migrated to GitHub Actions with reusable workflows, caching, and parallelism.</p>
@@ -91,12 +95,12 @@
     <section id="skills" class="container section appear-up delay-3">
       <h2>Skills & Tools</h2>
       <div class="skills">
-        <div class="card soft depth corner"><h4>Cloud</h4><p>AWS, Azure, GCP</p></div>
-        <div class="card soft depth corner"><h4>CI/CD</h4><p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p></div>
-        <div class="card soft depth corner"><h4>IaC</h4><p>Terraform, Pulumi, CloudFormation</p></div>
-        <div class="card soft depth corner"><h4>Containers</h4><p>Docker, Kubernetes, Helm</p></div>
-        <div class="card soft depth corner"><h4>Observability</h4><p>Prometheus, Grafana, EFK, OpenTelemetry</p></div>
-        <div class="card soft depth corner"><h4>Security</h4><p>Vault, Snyk, Trivy</p></div>
+        <div class="card soft depth corner focusable"><span class="c2"></span><span class="c3"></span><h4>Cloud</h4><p>AWS, Azure, GCP</p></div>
+        <div class="card soft depth corner focusable"><span class="c2"></span><span class="c3"></span><h4>CI/CD</h4><p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p></div>
+        <div class="card soft depth corner focusable"><span class="c2"></span><span class="c3"></span><h4>IaC</h4><p>Terraform, Pulumi, CloudFormation</p></div>
+        <div class="card soft depth corner focusable"><span class="c2"></span><span class="c3"></span><h4>Containers</h4><p>Docker, Kubernetes, Helm</p></div>
+        <div class="card soft depth corner focusable"><span class="c2"></span><span class="c3"></span><h4>Observability</h4><p>Prometheus, Grafana, EFK, OpenTelemetry</p></div>
+        <div class="card soft depth corner focusable"><span class="c2"></span><span class="c3"></span><h4>Security</h4><p>Vault, Snyk, Trivy</p></div>
       </div>
     </section>
 
@@ -108,16 +112,19 @@
       </div>
       <div class="timeline" id="experience-grid">
         <div class="item card soft depth corner" data-modal="exp-senior">
+          <span class="c2"></span><span class="c3"></span>
           <h3>Senior DevOps Engineer · Company</h3>
           <span class="period">2023 — Present</span>
           <p>- Led Kubernetes platform; introduced GitOps; reduced MTTR by 70%.</p>
         </div>
         <div class="item card soft depth corner" data-modal="exp-mid">
+          <span class="c2"></span><span class="c3"></span>
           <h3>DevOps Engineer · Company</h3>
           <span class="period">2021 — 2023</span>
           <p>- Migrated CI/CD to GitHub Actions; pipelines 3.8× faster with caching and sharding.</p>
         </div>
         <div class="item card soft depth corner" data-modal="exp-assoc">
+          <span class="c2"></span><span class="c3"></span>
           <h3>Associate DevOps Engineer · Company</h3>
           <span class="period">2019 — 2021</span>
           <p>- Containerized legacy apps; introduced monitoring and on-call runbooks.</p>
@@ -130,27 +137,29 @@
       <h2>Certifications</h2>
       <div class="grid">
         <article class="card cert float depth corner">
+          <span class="c2"></span><span class="c3"></span>
           <h3>AWS Certified Solutions Architect – Associate</h3>
           <p>Amazon Web Services · 2024</p>
           <a class="link btn-verify" target="_blank" rel="noopener" href="https://www.certmetrics.com/amazon/public/badge.aspx">Verify</a>
         </article>
         <article class="card cert float depth corner">
+          <span class="c2"></span><span class="c3"></span>
           <h3>Certified Kubernetes Administrator (CKA)</h3>
           <p>Linux Foundation · 2023</p>
           <a class="link btn-verify" target="_blank" rel="noopener" href="https://training.linuxfoundation.org/certification/verify/">Verify</a>
         </article>
-        <!-- Add more cards; put real portal verify URLs -->
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="container section appear-up delay-6">
       <h2>Contact</h2>
-      <p>Open to DevOps/SRE opportunities and consulting.</p>
-      <div class="social">
-        <a target="_blank" rel="noopener" href="https://github.com/yourhandle">GitHub</a>
-        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/yourhandle">LinkedIn</a>
-        <a href="mailto:yourname@example.com">Email</a>
+      <div class="contact-card card soft depth corner">
+        <span class="c2"></span><span class="c3"></span>
+        <div class="contact-row"><strong>Name:</strong> Bhargav Karkare</div>
+        <div class="contact-row"><strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></div>
+        <div class="contact-row"><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/yourhandle">linkedin.com/in/yourhandle</a></div>
+        <div class="contact-row"><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/yourhandle">github.com/yourhandle</a></div>
       </div>
     </section>
   </main>
@@ -159,7 +168,7 @@
     <span>© <span id="year"></span> Bhargav Karkare</span>
   </footer>
 
-  <!-- Shared Modal anchored near trigger; scroll remains enabled -->
+  <!-- Shared Modal (always centered by default) -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="modal-card depth-3" role="dialog" aria-modal="true">

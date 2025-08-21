@@ -37,9 +37,8 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.appear-up, .appear-top').forEach(el=>observer.observe(el));
 
-// Modal handling: body scroll stays enabled; card opens near its position
+// Modal: centered by default; tiny screens keep it centered; page remains scrollable
 const modal = document.getElementById('modal');
-const modalCard = modal.querySelector('.modal-card');
 const modalContent = modal.querySelector('.modal-content');
 
 function openTemplate(id){
@@ -50,36 +49,13 @@ function openTemplate(id){
   modal.setAttribute('aria-hidden','false');
 }
 
-function positionModalNear(el){
-  const rect = el.getBoundingClientRect();
-  const top = window.scrollY + rect.top + rect.height + 12; // below the tile
-  const left = Math.min(
-    window.scrollX + rect.left + rect.width/2 - modalCard.offsetWidth/2,
-    document.body.scrollWidth - modalCard.offsetWidth - 16
-  );
-  modalCard.style.top = `${Math.max(16, top)}px`;
-  modalCard.style.left = `${Math.max(16, left)}px`;
-}
-
-function openModalFrom(el){
-  openTemplate(el.getAttribute('data-modal'));
-  // ensure modalCard has dimensions before positioning
-  requestAnimationFrame(()=>positionModalNear(el));
-}
-
 function closeModal(){
   modal.setAttribute('aria-hidden','true');
 }
 
-// Attach click handlers to all tiles (projects + experience)
+// Open from any tile
 document.querySelectorAll('[data-modal]').forEach(el=>{
-  // add extra corner glow elements for full 4-corner effect
-  if(!el.querySelector('.c2')) {
-    const c2 = document.createElement('span'); c2.className='c2';
-    const c3 = document.createElement('span'); c3.className='c3';
-    el.appendChild(c2); el.appendChild(c3);
-  }
-  el.addEventListener('click', ()=> openModalFrom(el));
+  el.addEventListener('click', ()=> openTemplate(el.getAttribute('data-modal')));
 });
 
 // Close controls
