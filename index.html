@@ -14,16 +14,18 @@
   <div class="bg-photo"></div>
   <div class="bg-glass"></div>
 
+  <!-- Full-width glassy navbar -->
   <header class="nav appear-top">
     <div class="container nav-inner">
       <div class="brand">Bhargav Karkare</div>
-      <nav>
+      <nav class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
     </div>
   </header>
 
@@ -32,7 +34,7 @@
     <section id="hero" class="container hero appear-up">
       <p class="eyebrow big xlarge">DEVOPS ENGINEER</p>
 
-      <!-- Certification badges row (now from images/) -->
+      <!-- Certification badges row -->
       <div class="badge-row">
         <img src="images/aws.jpg" alt="AWS badge">
         <img src="images/azure.jpg" alt="Azure badge">
@@ -49,7 +51,7 @@
         <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">Download Resume</a>
       </div>
 
-      <!-- About Me (tight spacing requested) -->
+      <!-- About Me (pushed slightly down) -->
       <section id="about" class="about appear-up delay-1">
         <h2>About Me</h2>
         <p>
@@ -104,7 +106,7 @@
       </div>
     </section>
 
-    <!-- Experience with inline years badge -->
+    <!-- Experience -->
     <section id="experience" class="container section appear-up delay-4">
       <div class="section-header">
         <h2>Experience</h2>
@@ -156,10 +158,24 @@
       <h2>Contact</h2>
       <div class="contact-card card soft depth corner">
         <span class="c2"></span><span class="c3"></span>
-        <div class="contact-row"><strong>Name:</strong> Bhargav Karkare</div>
-        <div class="contact-row"><strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></div>
-        <div class="contact-row"><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/yourhandle">linkedin.com/in/yourhandle</a></div>
-        <div class="contact-row"><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/yourhandle">github.com/yourhandle</a></div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="icon">👤</div>
+            <div><strong>Name</strong><br>Bhargav Karkare</div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">✉️</div>
+            <div><strong>Email</strong><br><a href="mailto:yourname@example.com">yourname@example.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">in</div>
+            <div><strong>LinkedIn</strong><br><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/yourhandle">linkedin.com/in/yourhandle</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">🐙</div>
+            <div><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="https://github.com/yourhandle">github.com/yourhandle</a></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -168,7 +184,7 @@
     <span>© <span id="year"></span> Bhargav Karkare</span>
   </footer>
 
-  <!-- Shared Modal (always centered by default) -->
+  <!-- Centered modal -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="modal-card depth-3" role="dialog" aria-modal="true">
