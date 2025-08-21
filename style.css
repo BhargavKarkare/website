@@ -1,0 +1,107 @@
+:root{
+  --bg:#0D1117;
+  --card:#111827;
+  --muted:#94A3B8;
+  --text:#E5E7EB;
+  --primary:#22D3EE;
+  --border:#1F2937;
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif
+}
+a{text-decoration:none;color:var(--text)}
+.container{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* Frosted glass nav */
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 0;position:sticky;top:0;z-index:20;
+  background:rgba(13,17,23,0.55);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.brand{font-weight:800;letter-spacing:.4px}
+.nav a{margin-left:16px;color:var(--muted)}
+.nav a:hover{color:#cbd5e1}
+
+/* Background soft blurs */
+.bg-blur{position:fixed;inset:auto;z-index:0;filter:blur(60px);opacity:.45;pointer-events:none}
+.bg-a{top:-80px;left:-80px;width:420px;height:420px;background:radial-gradient( circle at 30% 30%, #22d3ee40, transparent 60%);}
+.bg-b{bottom:-120px;right:-120px;width:520px;height:520px;background:radial-gradient( circle at 70% 70%, #8b5cf633, transparent 60%);}
+
+.hero{padding:90px 0 40px;position:relative;z-index:1}
+.eyebrow{color:#7DD3FC;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+.eyebrow.small{font-size:11px;color:var(--muted)}
+/* Bigger eyebrow as requested */
+.eyebrow.big{font-size:18px;letter-spacing:.3em;color:#8BE9FF}
+
+h1{font-size:42px;line-height:1.1;margin:.3em 0 .2em}
+h2{font-size:28px;margin:0 0 18px}
+h3{font-size:18px;margin:8px 0}
+.sub{color:var(--muted);max-width:720px}
+
+.cta{display:flex;gap:12px;margin:22px 0 8px}
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),#7DD3FC);
+  color:#001216;padding:10px 16px;border-radius:10px;font-weight:600;
+  box-shadow:0 6px 16px rgba(34,211,238,.25);
+  transition:transform .18s ease, box-shadow .18s ease
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(34,211,238,.32)}
+.btn-ghost{border:1px solid var(--border);padding:10px 16px;border-radius:10px;color:var(--text);transition:background .2s}
+.btn-ghost:hover{background:rgba(255,255,255,0.04)}
+
+.stats{display:flex;gap:18px;margin-top:18px;color:var(--muted)}
+.stat-card{
+  border:1px solid var(--border);border-radius:12px;padding:10px 14px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0));
+}
+.stats span{font-weight:800;color:var(--text);display:block}
+
+.section{padding:56px 0;position:relative;z-index:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0));
+  border:1px solid var(--border);border-radius:14px;padding:18px;
+  transition:transform .25s ease, border-color .2s ease, box-shadow .25s ease
+}
+.card:hover{transform:translateY(-4px);border-color:#334155;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.card.soft{background:rgba(17,24,39,.45);border-color:#202938}
+
+.metrics{list-style:none;padding:0;margin:8px 0 0;color:var(--muted)}
+.metrics li{margin:4px 0}
+.tags{margin-top:10px;color:#7DD3FC;font-size:13px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.timeline{display:grid;gap:12px}
+.timeline .item{padding-left:0}
+.period{display:block;color:var(--muted);font-size:13px;margin:4px 0 8px}
+.cert .link{color:#7DD3FC}
+.social{display:flex;gap:16px;margin-top:10px}
+.footer{padding:24px 0;color:var(--muted);border-top:1px solid var(--border);margin-top:20px}
+
+/* Enter animations */
+@keyframes upIn{from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)}}
+@keyframes topIn{from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)}}
+.appear-up{opacity:0;animation:upIn .6s ease forwards}
+.appear-top{opacity:0;animation:topIn .5s ease forwards}
+.delay-1{animation-delay:.08s}
+.delay-2{animation-delay:.16s}
+.delay-3{animation-delay:.24s}
+.delay-4{animation-delay:.32s}
+.delay-5{animation-delay:.40s}
+
+.float{transform:translateY(0);animation:floatIn .7s ease forwards}
+@keyframes floatIn{from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)}}
+
+/* Responsive */
+@media (max-width:720px){
+  h1{font-size:32px}
+  h2{font-size:24px}
+  .eyebrow.big{font-size:16px}
+}
