@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DevOps Engineer Portfolio | Your Name</title>
+  <title>DevOps Engineer Portfolio | Bhargav Karkare</title>
   <meta name="description" content="DevOps engineer specializing in CI/CD, Kubernetes, Terraform, and cloud automation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -14,12 +14,8 @@
   <div class="bg-photo"></div>
   <div class="bg-glass"></div>
 
-  <!-- Parallax color haze (subtle) -->
-  <div class="bg-blur bg-a layer" data-depth="0.05"></div>
-  <div class="bg-blur bg-b layer" data-depth="0.1"></div>
-
   <header class="container nav appear-top">
-    <div class="brand">Your Name</div>
+    <div class="brand">Bhargav Karkare</div>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -32,39 +28,39 @@
   <main>
     <!-- Hero -->
     <section id="hero" class="container hero appear-up">
-      <p class="eyebrow big">DEVOPS ENGINEER</p>
+      <p class="eyebrow big xlarge">DEVOPS ENGINEER</p>
+
+      <!-- Certification badges row (replace src with your badge image URLs) -->
+      <div class="badge-row">
+        <!-- examples; replace or add more -->
+        <img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/64/certificate.png" alt="Cert badge">
+        <!-- <img src="YOUR_BADGE_URL.svg" alt="AWS SAA"> -->
+        <!-- <img src="YOUR_BADGE_URL.svg" alt="CKA"> -->
+      </div>
+
       <p class="sub">
         Building scalable pipelines, Kubernetes platforms, and robust observability across AWS/Azure/GCP.
       </p>
       <div class="cta">
         <a class="btn-primary" href="#projects">View Projects</a>
         <!-- Replace FILE_ID -->
-        <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">
-          Download Resume
-        </a>
+        <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">Download Resume</a>
       </div>
 
-      <!-- About Me -->
-      <section id="about" class="about card soft depth appear-up delay-1 corner">
+      <!-- About Me (no tiles) -->
+      <section id="about" class="about appear-up delay-1">
         <h2>About Me</h2>
         <p>
           DevOps engineer focused on automation, reliability, and cloud cost efficiency. Passionate about
-          Kubernetes platforms, GitOps, and clean IaC. (Update this later.)
+          Kubernetes platforms, GitOps, and clean Infrastructure as Code. (Update this text later.)
         </p>
       </section>
-
-      <div class="stats">
-        <div class="stat-card depth-2 corner">
-          <span>4+ yrs</span>
-          <label>Experience</label>
-        </div>
-      </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="container section appear-up delay-2">
       <h2>Projects</h2>
-      <div class="grid">
+      <div class="grid" id="projects-grid">
         <article class="card project depth float corner" data-modal="proj-eks-multiregion">
           <div class="eyebrow small">Project</div>
           <h3>Kubernetes Platform for Multi-Region SaaS</h3>
@@ -88,8 +84,6 @@
           </ul>
           <div class="tags">GitHub Actions · Docker · Caching · Test Sharding</div>
         </article>
-
-        <!-- Duplicate for more projects: update data-modal and add a matching template below -->
       </div>
     </section>
 
@@ -101,15 +95,18 @@
         <div class="card soft depth corner"><h4>CI/CD</h4><p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p></div>
         <div class="card soft depth corner"><h4>IaC</h4><p>Terraform, Pulumi, CloudFormation</p></div>
         <div class="card soft depth corner"><h4>Containers</h4><p>Docker, Kubernetes, Helm</p></div>
-        <div class="card soft depth corner"><h4>Observability</h4><p>Prometheus, Grafana, ELK/EFK, OpenTelemetry</p></div>
+        <div class="card soft depth corner"><h4>Observability</h4><p>Prometheus, Grafana, EFK, OpenTelemetry</p></div>
         <div class="card soft depth corner"><h4>Security</h4><p>Vault, Snyk, Trivy</p></div>
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience with inline years badge -->
     <section id="experience" class="container section appear-up delay-4">
-      <h2>Experience</h2>
-      <div class="timeline">
+      <div class="section-header">
+        <h2>Experience</h2>
+        <span class="years-badge">4 years</span>
+      </div>
+      <div class="timeline" id="experience-grid">
         <div class="item card soft depth corner" data-modal="exp-senior">
           <h3>Senior DevOps Engineer · Company</h3>
           <span class="period">2023 — Present</span>
@@ -135,13 +132,14 @@
         <article class="card cert float depth corner">
           <h3>AWS Certified Solutions Architect – Associate</h3>
           <p>Amazon Web Services · 2024</p>
-          <a class="link" target="_blank" rel="noopener" href="#">Verify</a>
+          <a class="link btn-verify" target="_blank" rel="noopener" href="https://www.certmetrics.com/amazon/public/badge.aspx">Verify</a>
         </article>
         <article class="card cert float depth corner">
           <h3>Certified Kubernetes Administrator (CKA)</h3>
           <p>Linux Foundation · 2023</p>
-          <a class="link" target="_blank" rel="noopener" href="#">Verify</a>
+          <a class="link btn-verify" target="_blank" rel="noopener" href="https://training.linuxfoundation.org/certification/verify/">Verify</a>
         </article>
+        <!-- Add more cards; put real portal verify URLs -->
       </div>
     </section>
 
@@ -158,10 +156,10 @@
   </main>
 
   <footer class="container footer">
-    <span>© <span id="year"></span> Your Name</span>
+    <span>© <span id="year"></span> Bhargav Karkare</span>
   </footer>
 
-  <!-- Shared Modal -->
+  <!-- Shared Modal anchored near trigger; scroll remains enabled -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="modal-card depth-3" role="dialog" aria-modal="true">
@@ -170,18 +168,14 @@
     </div>
   </div>
 
-  <!-- Project detail templates -->
+  <!-- Project templates -->
   <template id="tmpl-proj-eks-multiregion">
     <h2>Kubernetes Platform for Multi-Region SaaS</h2>
-    <p class="lede">
-      Multi-region EKS platform with GitOps for consistent, auditable deployments and platform guardrails.
-    </p>
+    <p class="lede">Multi-region EKS platform with GitOps for consistent, auditable deployments and platform guardrails.</p>
     <h3>Description</h3>
-    <p>
-      Architected EKS clusters across two regions with cluster-autoscaler, IRSA, and managed node groups.
+    <p>Architected EKS clusters across two regions with cluster-autoscaler, IRSA, and managed node groups.
       GitOps via Argo CD with app-of-apps pattern. Standardized Helm charts, progressive delivery, and
-      SLO-based alerting with Prometheus/Grafana.
-    </p>
+      SLO-based alerting with Prometheus/Grafana.</p>
     <h3>Outcomes</h3>
     <ul>
       <li>Deployment frequency increased to 20/day</li>
@@ -193,12 +187,10 @@
 
   <template id="tmpl-proj-gha-monorepo">
     <h2>CI/CD Modernization for Monorepo</h2>
-    <p class="lede">Modern GitHub Actions pipeline with composite actions, matrices, and aggressive caching.</p>
+    <p class="lede">Modern GitHub Actions pipeline with composite actions, matrices, and caching.</p>
     <h3>Description</h3>
-    <p>
-      Introduced reusable workflows, build/test matrices, and Docker layer caching. Adopted trunk-based
-      development and preview environments. Enforced quality gates with status checks and coverage thresholds.
-    </p>
+    <p>Introduced reusable workflows, build/test matrices, Docker layer caching, preview environments,
+       and trunk-based development with quality gates.</p>
     <h3>Outcomes</h3>
     <ul>
       <li>Lead time decreased by 60%</li>
@@ -208,15 +200,15 @@
     <p class="tags">Stack: GitHub Actions, Docker, Node, Test sharding, Artifact caching</p>
   </template>
 
-  <!-- Experience detail templates -->
+  <!-- Experience templates -->
   <template id="tmpl-exp-senior">
     <h2>Senior DevOps Engineer · Company</h2>
     <p class="lede">Ownership of platform reliability, scalability, and cost optimization.</p>
     <h3>Highlights</h3>
     <ul>
-      <li>Drove GitOps adoption across teams; 100% infra/app via PRs</li>
-      <li>Implemented SLOs, paging policies, and incident postmortems</li>
-      <li>Cut MTTR by 70% with better runbooks and golden signals</li>
+      <li>GitOps adoption across teams; 100% infra/app via PRs</li>
+      <li>SLOs, paging policies, and incident postmortems</li>
+      <li>MTTR down by 70% with golden signals and runbooks</li>
     </ul>
   </template>
 
@@ -224,9 +216,9 @@
     <h2>DevOps Engineer · Company</h2>
     <p class="lede">Modernized CI/CD and cloud foundations.</p>
     <ul>
-      <li>Migrated pipelines to GitHub Actions; 3.8× faster</li>
-      <li>Built Terraform modules for multi-account AWS</li>
-      <li>Rolled out image scanning and IaC policy checks</li>
+      <li>Pipelines 3.8× faster on GitHub Actions</li>
+      <li>Terraform modules for multi-account AWS</li>
+      <li>Image scanning and IaC policy checks</li>
     </ul>
   </template>
 
@@ -234,8 +226,8 @@
     <h2>Associate DevOps Engineer · Company</h2>
     <p class="lede">Enablement and groundwork for platform practices.</p>
     <ul>
-      <li>Containerized legacy apps, wrote initial Helm charts</li>
-      <li>Set up basic monitoring, logs, and alerting</li>
+      <li>Containerized legacy apps, initial Helm charts</li>
+      <li>Basic monitoring, logs, and alerting</li>
       <li>On-call playbooks and escalation paths</li>
     </ul>
   </template>
