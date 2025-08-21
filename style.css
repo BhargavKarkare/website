@@ -74,7 +74,7 @@ h3{font-size:18px;margin:8px 0}
 .sub{color:#d1d5db;max-width:760px}
 
 /* Badges now BELOW the CTAs with extra spacing */
-.badge-row.hero-badges{display:flex;gap:13px;margin-top:10px}
+.badge-row.hero-badges{display:flex;gap:16px;margin-top:10px}
 .badge-row.hero-badges img{
   height:100px;width:auto;border-radius:10px;
   filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));
