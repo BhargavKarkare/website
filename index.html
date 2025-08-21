@@ -30,13 +30,14 @@
   <main>
     <!-- Hero -->
     <section id="hero" class="container hero appear-up">
-      <p class="eyebrow big xlarge">DEVOPS ENGINEER</p>
-
-      <!-- Bigger badges -->
-      <div class="badge-row">
-        <img src="images/aws.jpg" alt="AWS badge">
-        <img src="images/azure.jpg" alt="Azure badge">
-        <img src="images/k.jpg" alt="Kubernetes badge">
+      <div class="hero-row">
+        <p class="eyebrow big xxlarge strong">DEVOPS ENGINEER</p>
+        <!-- Badges to the right of the heading -->
+        <div class="badge-row right">
+          <img src="images/aws.jpg" alt="AWS badge">
+          <img src="images/azure.jpg" alt="Azure badge">
+          <img src="images/k.jpg" alt="Kubernetes badge">
+        </div>
       </div>
 
       <p class="sub">
@@ -125,25 +126,16 @@
       </div>
     </section>
 
-    <!-- Certifications (single tile) -->
+    <!-- Certifications (single tile, no Verify buttons) -->
     <section id="certifications" class="container section appear-up delay-5">
       <h2>Certifications</h2>
       <div class="grid">
         <article class="card cert depth hl">
           <h3>Professional Certifications</h3>
           <ul class="cert-list">
-            <li>
-              AWS Certified DevOps Engineer - Professional
-              <a class="verify" target="_blank" rel="noopener" href="https://www.certmetrics.com/amazon/public/badge.aspx">Verify</a>
-            </li>
-            <li>
-              CKA: Certified Kubernetes Administrator
-              <a class="verify" target="_blank" rel="noopener" href="https://training.linuxfoundation.org/certification/verify/">Verify</a>
-            </li>
-            <li>
-              Microsoft Azure AZ-900
-              <a class="verify" target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/users/me/collections/certifications">Verify</a>
-            </li>
+            <li>AWS Certified DevOps Engineer - Professional</li>
+            <li>CKA: Certified Kubernetes Administrator</li>
+            <li>Microsoft Azure AZ-900</li>
           </ul>
         </article>
       </div>
@@ -179,7 +171,6 @@
     <span>© <span id="year"></span> Bhargav Karkare</span>
   </footer>
 
-  <!-- Centered modal -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="modal-card depth-3" role="dialog" aria-modal="true">
@@ -188,7 +179,7 @@
     </div>
   </div>
 
-  <!-- Project templates -->
+  <!-- Templates unchanged from previous message -->
   <template id="tmpl-proj-eks-multiregion">
     <h2>Kubernetes Platform for Multi-Region SaaS</h2>
     <p class="lede">Multi-region EKS platform with GitOps for consistent, auditable deployments and platform guardrails.</p>
@@ -220,7 +211,6 @@
     <p class="tags">Stack: GitHub Actions, Docker, Node, Test sharding, Artifact caching</p>
   </template>
 
-  <!-- Experience templates -->
   <template id="tmpl-exp-senior">
     <h2>Senior DevOps Engineer · Company</h2>
     <p class="lede">Ownership of platform reliability, scalability, and cost optimization.</p>

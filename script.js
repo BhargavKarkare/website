@@ -1,7 +1,7 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Smooth scroll for in-page links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -36,7 +36,7 @@ document.querySelectorAll('.card, .btn-primary, .btn-ghost').forEach(card=>{
   card.addEventListener('mouseleave', ()=> card.style.transform = '');
 });
 
-// Intersection reveal
+// Reveal animations
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.appear-up, .appear-top').forEach(el=>observer.observe(el));
 
-// Modal handling (centered)
+// Modal
 const modal = document.getElementById('modal');
 const modalContent = modal.querySelector('.modal-content');
 
