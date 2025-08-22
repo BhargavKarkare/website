@@ -28,7 +28,7 @@ a{text-decoration:none;color:var(--text)}
   background:linear-gradient(180deg, rgba(0,0,0,.48), rgba(0,0,0,.56))
 }
 
-/* Subtle parallax haze layers (optional hooks) */
+/* Optional decorative parallax layers */
 .layer{position:fixed;inset:auto;z-index:2;pointer-events:none;filter:blur(80px);opacity:.28}
 .layer.a{top:-120px;left:-120px;width:520px;height:520px;background:radial-gradient(circle at 30% 30%, #22d3ee40, transparent 60%)}
 .layer.b{bottom:-140px;right:-100px;width:620px;height:620px;background:radial-gradient(circle at 70% 70%, #8b5cf633, transparent 60%)}
@@ -55,7 +55,7 @@ a{text-decoration:none;color:var(--text)}
 .eyebrow.big.xxlarge{font-size:36px;letter-spacing:.34em}
 .strong{font-weight:800;color:#8BE9FF}
 
-/* Title row (title only on top) */
+/* Title row */
 .hero-title-row{display:flex;align-items:center;gap:18px;flex-wrap:nowrap}
 
 /* CTAs */
@@ -73,16 +73,29 @@ h2{font-size:26px;margin:0 0 12px}
 h3{font-size:18px;margin:8px 0}
 .sub{color:#d1d5db;max-width:760px}
 
-/* Badges now BELOW the CTAs with extra spacing */
-.badge-row.hero-badges{display:flex;gap:16px;margin-top:10px}
-.badge-row.hero-badges img{
-  height:100px;width:auto;border-radius:10px;
-  filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));
+/* Badges below CTAs: aligned and capped */
+.badge-row.hero-badges{
+  display:flex;gap:16px;margin-top:16px;
+  align-items:center;justify-content:flex-start;flex-wrap:wrap
+}
+.badge-row.hero-badges .badge{
+  height:72px; width:auto; max-width:120px; object-fit:contain; display:block;
+  border-radius:8px; filter:drop-shadow(0 3px 9px rgba(0,0,0,.4));
   transition:transform .15s ease, filter .15s ease
 }
-.badge-row.hero-badges img:hover{
-  transform:translateY(-2px) scale(1.06);
-  filter:drop-shadow(0 10px 20px rgba(34,211,238,.35))
+.badge-row.hero-badges .badge:hover{
+  transform:translateY(-2px) scale(1.04);
+  filter:drop-shadow(0 8px 16px rgba(34,211,238,.28))
+}
+@media (min-width:1200px){
+  .badge-row.hero-badges .badge{ height:84px; max-width:140px }
+}
+@media (max-width:900px){
+  .badge-row.hero-badges .badge{ height:64px; max-width:110px }
+}
+@media (max-width:600px){
+  .badge-row.hero-badges{ justify-content:center }
+  .badge-row.hero-badges .badge{ height:56px; max-width:96px }
 }
 
 /* Sections */

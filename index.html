@@ -29,34 +29,36 @@
 
   <main>
     <!-- Hero -->
-<section id="hero" class="container hero appear-up">
-  <!-- Title + badges in one row -->
-  <div class="hero-title-row">
-    <p class="eyebrow big xxlarge strong">DEVOPS ENGINEER</p>
-    <div class="badge-inline">
-      <img src="images/aws.jpg" alt="AWS badge">
-      <img src="images/azure.jpg" alt="Azure badge">
-      <img src="images/k.jpg" alt="Kubernetes badge">
-    </div>
-  </div>
+    <section id="hero" class="container hero appear-up">
+      <!-- Title on its own row -->
+      <div class="hero-title-row">
+        <p class="eyebrow big xxlarge strong">DEVOPS ENGINEER</p>
+      </div>
 
-  <p class="sub">
-    Building scalable pipelines, Kubernetes platforms, and robust observability across AWS/Azure/GCP.
-  </p>
+      <p class="sub">
+        Building scalable pipelines, Kubernetes platforms, and robust observability across AWS/Azure/GCP.
+      </p>
 
-  <div class="cta">
-    <a class="btn-primary" href="#projects">View Projects</a>
-    <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">Download Resume</a>
-  </div>
+      <div class="cta">
+        <a class="btn-primary" href="#projects">View Projects</a>
+        <a class="btn-ghost" target="_blank" rel="noopener" href="https://drive.google.com/uc?export=download&id=FILE_ID">Download Resume</a>
+      </div>
 
-  <section id="about" class="about appear-up delay-1">
-    <h2>About Me</h2>
-    <p>
-      DevOps engineer focused on automation, reliability, and cloud cost efficiency. Passionate about
-      Kubernetes platforms, GitOps, and clean Infrastructure as Code. (Update this text later.)
-    </p>
-  </section>
-</section>
+      <!-- Badges below CTAs, aligned and safely sized -->
+      <div class="badge-row hero-badges">
+        <img class="badge" src="images/aws.jpg" alt="AWS DevOps Pro badge">
+        <img class="badge" src="images/azure.jpg" alt="Azure Fundamentals badge">
+        <img class="badge" src="images/k.jpg" alt="CKA badge">
+      </div>
+
+      <section id="about" class="about appear-up delay-1">
+        <h2>About Me</h2>
+        <p>
+          DevOps engineer focused on automation, reliability, and cloud cost efficiency. Passionate about
+          Kubernetes platforms, GitOps, and clean Infrastructure as Code. (Update this text later.)
+        </p>
+      </section>
+    </section>
 
     <!-- Projects -->
     <section id="projects" class="container section appear-up delay-2">
@@ -88,41 +90,38 @@
       </div>
     </section>
 
-<!-- Skills (single tile) -->
-<section id="skills" class="container section appear-up delay-3">
-  <h2>Skills & Tools</h2>
-
-  <article class="card depth hl">
-    <div class="skills-grid">
-      <div class="skill-col">
-        <h4>Cloud</h4>
-        <p>AWS, Azure, GCP</p>
-      </div>
-      <div class="skill-col">
-        <h4>CI/CD</h4>
-        <p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p>
-      </div>
-      <div class="skill-col">
-        <h4>IaC</h4>
-        <p>Terraform, Pulumi, CloudFormation</p>
-      </div>
-      <div class="skill-col">
-        <h4>Containers</h4>
-        <p>Docker, Kubernetes, Helm</p>
-      </div>
-      <div class="skill-col">
-        <h4>Observability</h4>
-        <p>Prometheus, Grafana, EFK, OpenTelemetry</p>
-      </div>
-      <div class="skill-col">
-        <h4>Security</h4>
-        <p>Vault, Snyk, Trivy</p>
-      </div>
-    </div>
-  </article>
-</section>
-
-
+    <!-- Skills (single tile) -->
+    <section id="skills" class="container section appear-up delay-3">
+      <h2>Skills & Tools</h2>
+      <article class="card depth hl">
+        <div class="skills-grid">
+          <div class="skill-col">
+            <h4>Cloud</h4>
+            <p>AWS, Azure, GCP</p>
+          </div>
+          <div class="skill-col">
+            <h4>CI/CD</h4>
+            <p>GitHub Actions, GitLab CI, Jenkins, Argo CD</p>
+          </div>
+          <div class="skill-col">
+            <h4>IaC</h4>
+            <p>Terraform, Pulumi, CloudFormation</p>
+          </div>
+          <div class="skill-col">
+            <h4>Containers</h4>
+            <p>Docker, Kubernetes, Helm</p>
+          </div>
+          <div class="skill-col">
+            <h4>Observability</h4>
+            <p>Prometheus, Grafana, EFK, OpenTelemetry</p>
+          </div>
+          <div class="skill-col">
+            <h4>Security</h4>
+            <p>Vault, Snyk, Trivy</p>
+          </div>
+        </div>
+      </article>
+    </section>
 
     <!-- Experience -->
     <section id="experience" class="container section appear-up delay-4">
@@ -202,7 +201,7 @@
     </div>
   </div>
 
-  <!-- Templates unchanged from previous message -->
+  <!-- Project templates -->
   <template id="tmpl-proj-eks-multiregion">
     <h2>Kubernetes Platform for Multi-Region SaaS</h2>
     <p class="lede">Multi-region EKS platform with GitOps for consistent, auditable deployments and platform guardrails.</p>
@@ -234,6 +233,7 @@
     <p class="tags">Stack: GitHub Actions, Docker, Node, Test sharding, Artifact caching</p>
   </template>
 
+  <!-- Experience templates -->
   <template id="tmpl-exp-senior">
     <h2>Senior DevOps Engineer · Company</h2>
     <p class="lede">Ownership of platform reliability, scalability, and cost optimization.</p>

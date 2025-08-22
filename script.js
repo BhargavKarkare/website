@@ -69,7 +69,7 @@ modal?.addEventListener('click', (e)=>{
 modal?.querySelector('.close')?.addEventListener('click', closeModal);
 window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
-// Optional: parallax for decorative layers if you add them in HTML (.layer.a/.layer.b)
+// Optional parallax for .layer elements if present
 const layers = document.querySelectorAll('.layer');
 if (layers.length){
   window.addEventListener('mousemove', (e)=>{
