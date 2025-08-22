@@ -68,16 +68,3 @@ modal?.addEventListener('click', (e)=>{
 });
 modal?.querySelector('.close')?.addEventListener('click', closeModal);
 window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
-
-// Optional parallax for .layer elements if present
-const layers = document.querySelectorAll('.layer');
-if (layers.length){
-  window.addEventListener('mousemove', (e)=>{
-    const x = (e.clientX / window.innerWidth - 0.5);
-    const y = (e.clientY / window.innerHeight - 0.5);
-    layers.forEach((l,i)=>{
-      const depth = 0.04 + i*0.02;
-      l.style.transform = `translate3d(${x * -40 * depth}px, ${y * -40 * depth}px, 0)`;
-    });
-  });
-}
