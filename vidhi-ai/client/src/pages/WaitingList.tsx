@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Clock, UserPlus, X, Check, Play } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
-import { mockPatients } from '../data/mockData';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface WaitingPatient {
     id: string;

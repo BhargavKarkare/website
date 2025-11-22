@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { useParams } from 'react-router-dom';
-import { User, Phone, Calendar, Activity, FileText } from 'lucide-react';
+import { User, Phone, Activity, FileText } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { mockPatients, mockVisits } from '../data/mockData';
 

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Save, FileText, Mic, Play, Loader2, Stethoscope, AlertCircle, Plus, X, ArrowLeft, Info, CheckCircle, Clock } from 'lucide-react';
+import { Save, FileText, Mic, Loader2, Stethoscope, ArrowLeft, Info, CheckCircle, Clock } from 'lucide-react';
 import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { demoPatient, demoVitals, demoComplaint, demoSOAP, demoICDCodes, demoMedications } from '../data/demoData';
+import { demoPatient, demoVitals, demoComplaint, demoSOAP, demoICDCodes } from '../data/demoData';
 
 export default function DemoMode() {
     const navigate = useNavigate();
@@ -15,9 +14,8 @@ export default function DemoMode() {
         assessment: '',
         plan: ''
     });
-    const [vitals, setVitals] = useState(demoVitals);
+    const [vitals] = useState(demoVitals);
     const [selectedICDs, setSelectedICDs] = useState<typeof demoICDCodes>([]);
-    const [showICDSearch, setShowICDSearch] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const [demoConsultations, setDemoConsultations] = useState<any[]>([]);
 

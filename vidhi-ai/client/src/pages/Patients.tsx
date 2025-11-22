@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, Plus, Upload, X, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
@@ -225,8 +225,8 @@ export default function Patients() {
 
                                 {importStatus && (
                                     <div className={`flex items-center gap-2 p-3 rounded-lg ${importStatus.type === 'success'
-                                            ? 'bg-green-50 text-green-800'
-                                            : 'bg-red-50 text-red-800'
+                                        ? 'bg-green-50 text-green-800'
+                                        : 'bg-red-50 text-red-800'
                                         }`}>
                                         {importStatus.type === 'success' ? (
                                             <CheckCircle className="h-5 w-5" />

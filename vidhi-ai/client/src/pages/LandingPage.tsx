@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { Stethoscope, Sparkles, Baby, ShieldCheck, Clock, FileText, BarChart3, Check, ArrowRight, Play } from 'lucide-react';
 import { Button } from '../components/ui/Button';
